@@ -38,3 +38,7 @@ tty.* if you have a special case where the device initiates contact (e.g., GSM m
   https://github.com/huggingface/lerobot/blob/main/examples/10_use_so100.md#a-set-ids-for-all-12-motors
 
 
+# will autorun calibration
+python lerobot/scripts/control_robot.py --robot.type=so100 --control.type=teleoperate\n
+
+
