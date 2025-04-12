@@ -496,3 +496,14 @@ def run_arm_manual_calibration(arm: MotorsBus, robot_type: str, arm_name: str, a
         "motor_names": arm.motor_names,
     }
     return calib_dict
+
+if __name__ == "__main__":
+    from lerobot.common.robot_devices.motors.utils import make_motors_buses_from_configs
+    from lerobot.common.robot_devices.robots.configs import So100RobotConfig
+    
+
+    # the below looks erratic... written by my poor guess. Please fix. 
+
+    bus = make_motors_buses_from_configs(So100RobotConfig)
+    # run_arm_auto_calibration_so100(bus["left_follower"], "so100", "left", "follower")
+    run_arm_auto_calibration_so100() # why no follower arm auto calibration? 

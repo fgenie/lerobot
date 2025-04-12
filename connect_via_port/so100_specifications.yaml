@@ -1,0 +1,40 @@
+MainArm:
+  VID: 6790
+  PID: 21971
+  Product: SO100-MainArm
+  Device: /dev/cu.usbmodem58FA1013891
+          # /dev/tty.usbmodem58FA1013891
+  
+
+SubArm:
+  VID: 6790
+  PID: 21971
+  Product: SO100-SubArm # arm that has gripper
+  Device: /dev/cu.usbmodem58FA0929491
+          # /dev/tty.usbmodem58FA0929491
+
+
+
+# tty 나 cu로 시작하는거나 컨벤션이고 그냥 같음
+# Device	Meaning	Purpose
+/dev/tty.*	Teletype	For "listening" – device expected to initiate
+/dev/cu.*	Callup	For "calling out" – you initiate the connection
+
+BUT: tty.* might block if it thinks the other end hasn't "answered" yet
+
+cu.* is generally preferred for initiating communication (your case: robot control)
+
+Stick to:
+
+cu.* if you're opening a port to talk to a device (robot, microcontroller)
+
+tty.* if you have a special case where the device initiates contact (e.g., GSM modem dialing in)
+
+
+
+# motor config
+모터별 configuration 하는 과정 나는 스킵했음 이미 configurated 된 거 조립되어 옴
+
+  https://github.com/huggingface/lerobot/blob/main/examples/10_use_so100.md#a-set-ids-for-all-12-motors
+
+
